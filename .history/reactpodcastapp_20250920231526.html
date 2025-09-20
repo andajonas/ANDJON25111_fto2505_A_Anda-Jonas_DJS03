@@ -246,27 +246,4 @@
             color: #7f8c8d;
             border-top: 1px solid #eee;
         }
-
-        </style>
-</head>
-<body>
-    <div id="root"></div>
-    
-    const { useState, useEffect } = React;
-
-        // Format date using a simple formatter (since we can't use date-fns)
-        const formatDate = (dateString) => {
-            const date = new Date(dateString);
-            const now = new Date();
-            const diffTime = Math.abs(now - date);
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-            
-            if (diffDays === 0) return 'today';
-            if (diffDays === 1) return 'yesterday';
-            if (diffDays < 7) return `${diffDays} days ago`;
-            if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
-            return `${Math.floor(diffDays / 30)} months ago`;
-        };
-
-</body>
-</html>
+        
