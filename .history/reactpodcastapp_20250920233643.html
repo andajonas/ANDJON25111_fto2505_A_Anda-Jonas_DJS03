@@ -309,60 +309,7 @@
             );
         };
 
-        // Modal Component
-        const PodcastModal = ({ podcast, isOpen, onClose }) => {
-            if (!isOpen || !podcast) return null;
-            
-            // Mock season data since we don't have it from the API
-            const mockSeasons = Array.from({length: podcast.seasons}, (_, i) => ({
-                title: `Season ${i + 1}`,
-                episodes: Math.floor(Math.random() * 10) + 5
-            }));
-
-            return (
-                <div className="modal-overlay" onClick={onClose}>
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
-                        <div className="modal-header">
-                            <h2>{podcast.title}</h2>
-                            <button className="close-btn" onClick={onClose}>&times;</button>
-                        </div>
-                        <div className="modal-body">
-                            <div className="modal-banner">
-                                <img 
-                                    src={podcast.image} 
-                                    alt={podcast.title}
-                                    className="modal-img"
-                                    onError={(e) => {
-                                        e.target.src = 'https://place-hold.it/300x300/6e8efb/ffffff&text=Podcast&fontsize=16';
-                                    }}
-                                />
-                                <div className="modal-info">
-                                    <h3>Description</h3>
-                                    <p>{podcast.description}</p>
-                                    <h3>Genres</h3>
-                                    <div className="podcast-genres">
-                                        {podcast.genres.map(genreId => (
-                                            <span key={genreId} className="genre-tag">{genreMap[genreId] || 'Unknown'}</span>
-                                        ))}
-                                    </div>
-                                    <p className="podcast-updated">Updated {formatDate(podcast.updated)}</p>
-                                </div>
-                            </div>
-                            <h3>Seasons</h3>
-                            <ul className="season-list">
-                                {mockSeasons.map((season, index) => (
-                                    <li key={index} className="season-item">
-                                        <span className="season-title">{season.title}</span>
-                                        <span className="episodes">{season.episodes} episodes</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
+        
 
 
 </body>
