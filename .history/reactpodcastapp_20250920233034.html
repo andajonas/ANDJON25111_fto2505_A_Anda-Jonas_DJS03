@@ -293,23 +293,5 @@
                             e.target.src = 'https://place-hold.it/300x200/6e8efb/ffffff&text=Podcast&fontsize=16';
                         }}
                     />
-                    <div className="podcast-info">
-                        <h3 className="podcast-title">{podcast.title}</h3>
-                        <div className="podcast-details">
-                            <p className="podcast-seasons">{podcast.seasons} season{podcast.seasons !== 1 ? 's' : ''}</p>
-                            <p className="podcast-updated">Updated {formatDate(podcast.updated)}</p>
-                        </div>
-                        <div className="podcast-genres">
-                            {podcast.genres.map(genreId => (
-                                <span key={genreId} className="genre-tag">{genreMap[genreId] || 'Unknown'}</span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-
-
 </body>
 </html>
