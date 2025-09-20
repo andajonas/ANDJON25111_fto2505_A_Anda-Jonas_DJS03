@@ -254,7 +254,7 @@
 
     const { useState, useEffect } = React;
 
-        // Format date using a simple formatter 
+        // Format date using a simple formatter (since we can't use date-fns)
         const formatDate = (dateString) => {
             const date = new Date(dateString);
             const now = new Date();
@@ -267,20 +267,7 @@
             if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
             return `${Math.floor(diffDays / 30)} months ago`;
         };
-
-        // Genre mapping based on data.js
-        const genreMap = {
-            1: "Personal Growth",
-            2: "Investigative Journalism",
-            3: "History",
-            4: "Comedy",
-            5: "Entertainment",
-            6: "Business",
-            7: "Fiction",
-            8: "News",
-            9: "Kids and Family"
-        };
-
+        
 
 </body>
 </html>
